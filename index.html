@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>TabiConcier beta</title>
+
+  <meta charset="UTF-8">
+
+  <!--Viewport要素：横幅をデバイス画面の持つピクセル数にあわせる-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <!-- TODO : スタイルの競合!?解決(jquery-ui.css と tabi-theme-1.min.css,jquery.mobile.structure-1.0.1.min.css)
+    とりあえす、jquery-ui.css の link行は、jquery modileスタイルの前に挿入する。
+    そうしないと、ボタン矢印が競合しているのかボタンアイコンが表示されなくなる。
+    が、逆に、ダイアログの閉じるアイコン、リサイズアイコンがヘンに表示される。
+  -->
+  <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css" />
+  <!--
+    自作スタイルを指定する場合は、jquery.mobile.structure-1.0.1.min.css を指定するようだ
+    (jquery.mobile-1.0.1.min.cssではない)
+  -->
+  <link rel="stylesheet" href="css/themes/tabi-theme-2.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile.structure-1.0.1.min.css" />
+  <!--
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+  -->
+<link type="text/css" rel="stylesheet" href="css/mobile.css" />
+<!--
+  <link rel="stylesheet" href="css/tabiconcier.css" />
+-->
+  <script type="text/javascript" src="js/loadtabiconcss.js"></script>
+  <link type="text/css" rel="stylesheet" href="css/960/min/960.css" />
+  <link type="text/css" rel="stylesheet" href="css/960/min/960_16_col.css" />
+  <link type="text/css" rel="stylesheet" href="css/normalize/min/normalize.css" />
+  <link type="text/css" rel="stylesheet" href="css/prettify/min/prettify.css" />
+<!--
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+-->
+  <script type="text/javascript" src="js/modernizr-2.0.6/modernizr.min.js"></script>
+
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&libraries=places"></script>
+  <script type="text/javascript" src="js/jquery-1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.ui-1.8.15/jquery.ui.autocomplete.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/underscore-1.2.2/underscore.min.js"></script>
+  <script type="text/javascript" src="js/backbone-0.5.3/backbone.min.js"></script>
+  <script type="text/javascript" src="js/prettify/prettify.min.js"></script>
+  <script type="text/javascript" src="js/jstorage/jstorage.min.js"></script>
+<!--  <script type="text/javascript" src="js/demo.js"></script>-->
+</head>
+
+<body>
+<!--splash page-->
+<div data-role="page" id="splash" style="margin: 0 auto;text-align: center">
+    <image src="img/splash.png" style="width:600px;height:400px">
+</div>
+
+<!-- マップビュー page -->
+<div data-role="page" id="mapview" data-title="マップビュー" data-theme="a">
+    <div data-role="header" id="header" data-theme="a" >
+        <a href="#" id="legopen" data-role="button" data-icon="grid" data-inline="true">行程</a>
+        <a href="javascript:doConcier()" id="doConcier" data-role="button" data-icon="search" data-inline="true">コンシェル</a>
+        <h1 id="tabicontitle">TabiConcier</h1>
+    </div><!-- /header -->
+
+<!-- TODO : スライドパネル
+  スライドパネル(legpanel)だと、スライドはイイが、マップが改行してしまう。
+  Facebookアプリみたいに幅狭くなるだけにしたいが。マップ幅操作が必要か？
+  オーバーラップ(legpart/overwrap)だと、マップの上にかぶる。
+  どっちがいいかな？
+  とりあえず、透明度あるオーバーラップにする
+-->
+<!--  スライドパネル
+<div id='legpanel'>
+</div>
+-->
+    <div id="legpart" data-role="content" class="container_16" data-theme="a">
+        <div id="map_frame" class="ui-bar-c ui-corner-all ui-shadow" style="padding:0.5em;">
+            <div id="map_view" class="item rounded dark">
+                <div id="map_canvas" class="map rounded"></div>
+                <div id="dialog"></div>
+            </div>
+        </div>
+    </div><!-- /content -->
+
+    <div data-role="footer" id="footer" class="footer">
+        <h4>Copyright 2012, Year-Rayber-Becky Le Sir prj</h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+  <script type="text/javascript" src="ui/min/jquery.ui.map.min.js"></script>
+  <script type="text/javascript" src="ui/min/jquery.ui.map.services.min.js"></script>
+  <script type="text/javascript" src="ui/jquery.ui.map.extensions.js"></script>
+  <script type="text/javascript" src="js/tabiconcier.js"></script>
+</body>
+</html>

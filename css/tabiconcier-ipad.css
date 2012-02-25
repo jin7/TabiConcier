@@ -1,0 +1,116 @@
+// mapview高さ拡大
+// フォントサイズ拡大
+// ヘッダ高さ拡大
+    #header {
+      height: 60px;
+    }
+    #mapview {
+        height:1280px;
+    }
+    .footer {
+        position:fixed;
+        position:absolute;
+        right:0;
+        bottom:-300px;
+        padding:0;
+        margin:0;
+        height:4%;
+        width:100%;
+        margin-top: 16px;
+        text-align:center;
+    }
+    #legopen {
+      font-size:16px;
+    }
+    #doConcier {
+      font-size:16px;
+    }
+    #tabicontitle {
+      text-align: center;
+      margin-top: 16px;
+    }
+    #map_canvas {
+      position:relative;
+      margin: 0;
+      padding: 0;
+      height: 630px;
+      width:945px;
+    } 
+    #gmap {
+      width:640px;
+      height:600px;
+    }
+    #directions {
+      position:absolute;
+      width:640px;
+      height:200px;
+      bottom:0
+      left:0
+      overflow:scroll;
+    }
+    #closeDirection {
+      position:absolute;
+      right:0;
+      top:0;
+    }
+    #map_canvas .adp-placemark {
+       margin-top:0;
+    }
+    #route {
+      width: 640px;
+      height: 200px;
+      overflow: scroll
+    }
+
+    #legpanel
+    {
+        opacity : 0.4;
+        height: 630px;
+        width: 500px;
+        padding:20px;
+        background-color: #020023;
+//        background: #eee;
+        float: left;
+        display: none;
+        color: #666;
+        font-size: xx-large;
+    }
+    #overlay
+    {
+        opacity : 0.8;
+        position: absolute;
+        float: left;
+//        top: 8%;
+        top: 4%;
+        left: 0;
+        background-color: #020023;
+        width: 500px;
+        height: 1000px;
+        display: none;
+        z-index: 5000;
+    }
+
+//    .open
+//    {
+//         height: 20px;
+//         width: 70px;
+//         background: #666;
+//        padding:20px;
+//         float: left;
+//         margin-top: 200px;
+//        color:#fff;
+//    }
+
+.baroon {
+   position: relative;
+//   margin-top : -95px;
+   margin-left: 100px;
+   background-color: #fff;
+   font-size: normal;
+}
+.baroon:after {
+   position: absolute; top: 20px; left: -20px;
+   content: ""; width: 0; height: 0;
+   border-top: 20px solid #fff;
+   border-left: 20px solid transparent;
+}

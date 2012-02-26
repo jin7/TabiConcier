@@ -803,6 +803,11 @@ $(function(){
 //    },3000);
 });
 
+function changeToSplash() {
+    $.mobile.changePage("#splash",{transition:"fade"});
+
+}
+
     var isInitialize = true;
     loadLocation();
     isInitialize = false;

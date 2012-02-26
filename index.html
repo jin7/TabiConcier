@@ -46,6 +46,8 @@
   <script type="text/javascript" src="js/prettify/prettify.min.js"></script>
   <script type="text/javascript" src="js/jstorage/jstorage.min.js"></script>
 <!--  <script type="text/javascript" src="js/demo.js"></script>-->
+  <script type="text/javascript" src="js/fb/login.js"></script>
+<!--  <script type="text/javascript" src="fb-album.js"></script>-->
 </head>
 
 <body>
@@ -73,6 +75,15 @@
 <div id='legpanel'>
 </div>
 -->
+    <div id="fb-root"></div>
+    <div id="fb-login" style="background-color:transparent">
+        <script src="http://connect.facebook.net/en_US/all.js#appId=1068547494385027&xfbml=1"></script>
+        <p>
+            <fb:login-button show-faces="true" width="480" max-rows="3" perms="read_stream,publish_stream,user_photos,friends_photos"></fb:login-button>
+        </p>
+    </div>
+    <div id="login" style ="display:none"></div>
+
     <div id="legpart" data-role="content" class="container_16" data-theme="a">
         <div id="map_frame" class="ui-bar-c ui-corner-all ui-shadow" style="padding:0.5em;">
             <div id="map_view" class="item rounded dark">
@@ -85,6 +96,7 @@
     <div data-role="footer" id="footer" class="footer">
         <h4>Copyright 2012, Year-Rayber-Becky Le Sir prj</h4>
     </div><!-- /footer -->
+
 </div><!-- /page -->
 
   <script type="text/javascript" src="ui/min/jquery.ui.map.min.js"></script>
